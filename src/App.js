@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+function secondLargestNumber(arr) {
+  let first = -1,
+    second = -1;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] > first) {
+      second = first;
+      first = arr[i];
+    } else if (arr[i] > second && arr[i] != first) {
+      second = arr[i];
+    }
+  }
+  console.log(second);
 }
-
-export default App;
+let arr = [312, 535, 631, 120, 934, 98];
+secondLargestNumber(arr);
